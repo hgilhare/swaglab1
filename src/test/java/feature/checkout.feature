@@ -23,7 +23,6 @@ Examples:
 |gauri|gilhare|492003|
 
 
-
 @Reg
 Scenario: validating checkout fanctonality with empty credential
 
