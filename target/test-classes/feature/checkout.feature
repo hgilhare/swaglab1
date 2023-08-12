@@ -24,6 +24,7 @@ Examples:
 |shubhanshu|singh|480001|
 |sumeet|bhagat|470002|
 |salmaan|Khan|480001|
+|akshay|kumar|420009|
 
 
 
