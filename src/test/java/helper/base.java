@@ -51,16 +51,19 @@ public class base {
 		}
 
 	}
-@Before
+
+	@Before
 	public void setup() {
 
 		String browsername = prop.getProperty("browser");
 		if (browsername.equals("chrome")) {
-			ChromeOptions option = new ChromeOptions();
-			option.addArguments("--remote-allow-origins=*");
-			option.addArguments("--incognito");
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			// ChromeOptions option = new ChromeOptions();
+			// option.addArguments("--remote-allow-origins=*");
+			/// option.addArguments("--incognito");
 
-			driver = new ChromeDriver(option);
+			//// driver = new ChromeDriver(option);
 		} else if (browsername.equals("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
@@ -70,15 +73,16 @@ public class base {
 		driver.get(prop.getProperty("url"));
 
 	}
-@After
+
+	@After
 	public void teardown(Scenario s) throws IOException {
-		if(s.isFailed()) {
-			TakesScreenshot t= (TakesScreenshot)driver;
-		File src=	t.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src,new File ("screenshots/"+s.getName()+".png"));
-			
+		if (s.isFailed()) {
+			TakesScreenshot t = (TakesScreenshot) driver;
+			File src = t.getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(src, new File("screenshots/" + s.getName() + ".png"));
+
 		}
-	
+
 		driver.quit();
 	}
 
