@@ -1,5 +1,6 @@
-Feature: validating checkout functionality
 @Reg
+Feature: validating checkout functionality
+
 Scenario Outline: validating checkout fanctonality with valid credential
 
 And user enter username and password
@@ -30,7 +31,7 @@ Examples:
 
 
 
-@Reg
+
 Scenario: validating checkout fanctonality with empty credential
 
 And user enter username and password
@@ -45,7 +46,7 @@ And user click on continue button
 And validate error message
 And user close the browser
 
-@Reg
+
 Scenario: validating remove button from cart
 
 And user enter username and password
