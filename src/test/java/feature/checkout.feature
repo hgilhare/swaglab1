@@ -26,6 +26,7 @@ Examples:
 |salmaan|Khan|480001|
 |akshay|kumar|420009|
 |vickey|kausal|123456|
+|sharuk|khan|125877|
 
 
 
